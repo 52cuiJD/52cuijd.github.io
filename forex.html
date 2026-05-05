@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="FOREX嘉盛集团官方介绍：全球多监管外汇交易商，提供外汇、贵金属、CFD交易服务"/>
+  <title>FOREX嘉盛集团｜全球多监管外汇交易商</title>
+  <style>
+    :root {
+      --primary: #2fa4e8;
+      --primary-light: #0055a4;
+      --accent: #00a8e1;
+      --text: #1a1a1a;
+      --text-muted: #4a5568;
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 顶部横幅 */
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      padding: 2.8rem 1.5rem 2.2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      left: -30%;
+      width: 160%;
+      height: 160%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    }
+    .hero h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+    .hero .subtitle {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      opacity: 0.95;
+      font-size: 1.05rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero .reg-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .reg-badge {
+      background: rgba(255,255,255,0.15);
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    /* 主容器 */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* 内容卡片 */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      margin: 1.1rem 0;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* 章节标题 */
+    h2 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin: 0 0 1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2::before {
+      content: "";
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin: 1.2rem 0 0.6rem;
+      font-weight: 600;
+    }
+
+    /* 文本样式 */
+    p { 
+      margin-bottom: 0.85rem; 
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+    strong { 
+      color: var(--text); 
+      font-weight: 600; 
+    }
+    em { 
+      color: var(--accent); 
+      font-style: normal; 
+      font-weight: 500;
+    }
+
+    /* 列表样式 */
+    ul {
+      margin: 0.5rem 0 0.5rem 1.5rem;
+      color: var(--text-muted);
+    }
+    li { 
+      margin-bottom: 0.4rem; 
+      padding-left: 0.25rem;
+    }
+
+    /* 重点提示框 */
+    .tip {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border-left: 4px solid var(--accent);
+      padding: 0.95rem 1.2rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 0.9rem 0;
+      font-size: 0.95rem;
+    }
+    .tip.warning {
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border-left-color: var(--warning);
+    }
+    .tip.success {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border-left-color: var(--success);
+    }
+
+    /* 平台信息网格 */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.7rem;
+      margin: 0.8rem 0;
+    }
+    .info-item {
+      background: #f8fafc;
+      padding: 0.75rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .info-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+    .info-item span {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* 开户按钮 */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white !important;
+      padding: 0.75rem 2rem;
+      border-radius: 28px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      margin: 1rem 0;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 85, 164, 0.35);
+      width: 100%;
+      max-width: 320px;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 85, 164, 0.45);
+      opacity: 0.98;
+    }
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    /* 开户注意事项 - 可折叠 */
+    .notice-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin: 0.65rem 0;
+      overflow: hidden;
+    }
+    .notice-title {
+      padding: 0.85rem 1.15rem;
+      background: #f8fafc;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: background 0.2s;
+      font-size: 0.98rem;
+    }
+    .notice-title:hover {
+      background: #f1f5f9;
+    }
+    .notice-title::after {
+      content: "＋";
+      font-size: 1.15rem;
+      font-weight: 300;
+      transition: transform 0.25s;
+      color: var(--accent);
+    }
+    .notice-item.open .notice-title::after {
+      transform: rotate(45deg);
+    }
+    .notice-content {
+      padding: 0 1.15rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: white;
+      font-size: 0.93rem;
+    }
+    .notice-item.open .notice-content {
+      padding: 0.75rem 1.15rem 1.1rem;
+      max-height: 600px;
+    }
+    .notice-content ul {
+      margin-left: 1.3rem;
+      margin-top: 0.4rem;
+    }
+    .notice-content li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* 信任背书卡片 */
+    .trust-card {
+      background: linear-gradient(135deg, #f0f9ff, #ffffff);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      margin: 0.7rem 0;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+    .trust-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    .trust-content h4 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    .trust-content p {
+      margin-bottom: 0;
+      font-size: 0.93rem;
+    }
+
+    /* 资金安全强调 */
+    .security-highlight {
+      background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+      border: 2px solid var(--success);
+      border-radius: var(--radius);
+      padding: 1.3rem;
+      margin: 1.2rem 0;
+    }
+    .security-highlight h3 {
+      margin-top: 0;
+      color: var(--success);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* 页脚 */
+    .footer {
+      text-align: center;
+      padding: 2.2rem 1.5rem 2.8rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1.2rem;
+      background: white;
+    }
+    .footer .disclaimer {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* 响应式优化 */
+    @media (max-width: 768px) {
+      .hero { padding: 2.3rem 1.2rem 1.8rem; }
+      .hero h1 { font-size: 1.65rem; }
+      .hero .subtitle { font-size: 0.98rem; }
+      .container { padding: 0 1.2rem; }
+      .card { padding: 1.3rem; margin: 0.9rem 0; }
+      h2 { font-size: 1.25rem; }
+      .info-grid { grid-template-columns: 1fr 1fr; }
+      .trust-card { flex-direction: column; text-align: center; }
+      .trust-icon { margin: 0 auto; }
+    }
+
+    /* 打印优化 */
+    @media print {
+      .cta-button { display: none !important; }
+      .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+      body { background: white; }
+      a { text-decoration: none; color: #000; }
+    }
+
+    /* 辅助类 */
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 1rem; }
+    .mb-0 { margin-bottom: 0; }
+    .highlight { 
+      background: #fef3c7; 
+      padding: 0.1rem 0.4rem; 
+      border-radius: 4px; 
+      font-weight: 500;
+      color: #92400e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部横幅 -->
+  <header class="hero">
+    <h1>FOREX 嘉盛集团</h1>
+    <p class="subtitle">英国/美国/澳大利亚/新加坡/日本等全球多监管外汇交易商</p>
+    <div class="reg-badges">
+      <span class="reg-badge">🇬🇧 FCA: 113942</span>
+      <span class="reg-badge">🇺🇸 NFA: 0339826</span>
+      <span class="reg-badge">🇦🇺 ASIC: 345646</span>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- 平台概览 -->
+    <section class="card">
+      <h2>📊 平台核心信息</h2>
+      
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>经营模式</strong>
+          <span>Market Maker<br>（做市商）</span>
+        </div>
+        <div class="info-item">
+          <strong>交易平台</strong>
+          <span>FOREXTrader<br>MT4 / MT5</span>
+        </div>
+        <div class="info-item">
+          <strong>交易品种</strong>
+          <span>外汇 / 贵金属 / CFD</span>
+        </div>
+        <div class="info-item">
+          <strong>最大杠杆</strong>
+          <span>400 倍</span>
+        </div>
+        <div class="info-item">
+          <strong>最低入金</strong>
+          <span>100 美元</span>
+        </div>
+        <div class="info-item">
+          <strong>入金方式</strong>
+          <span>信用卡 / 电汇</span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a class="cta-button" href="http://fx.fxz.es/jiasheng" target="_blank" rel="noopener">
+          🎁 免费开户 →
+        </a>
+      </div>
+    </section>
+
+    <!-- 开户注意事项（可折叠） -->
+    <section class="card">
+      <h2>⚠️ 客户开户注意事项</h2>
+      <p>为确保您的账户顺利审核通过，请勿重复提交申请表，并注意以下关键事项：</p>
+      
+      <div class="notice-item">
+        <div class="notice-title">1. 请勿使用VPN等翻墙软件</div>
+        <div class="notice-content">
+          <p>申请过程中请关闭所有代理/加速/翻墙工具，使用正常网络环境提交，避免因IP异常导致审核失败。</p>
+        </div>
+      </div>
+      
+      <div class="notice-item">
+        <div class="notice-title">2. 务必填写真实财务信息与资金来源</div>
+        <div class="notice-content">
+          <p><strong>年收入/净资产</strong>与<strong>资金来源</strong>需如实填写，常见情况参考：</p>
+          <ul>
+            <li>👔 有工作：资金来源选 <span class="highlight">"受聘/薪金"</span></li>
+            <li>🏢 自营/开公司：选 <span class="highlight">"其他"</span>，后续邮件说明业务详情</li>
+            <li>💰 无业但有积蓄：就业状态选"无业"，资金来源选 <span class="highlight">"投资/储蓄"</span>，可附银行流水或券商报告作证明</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="notice-item">
+        <div class="notice-title">3. 居住地址须精确且可搜索</div>
+        <div class="notice-content">
+          <p>请填写您当前实际居住地址（可与身份证地址不同），格式示例：<br>
+          <code>XX市XX区XX街XX号XX小区X栋X室</code></p>
+          <p class="tip warning" style="margin:0.5rem 0 0">🔍 地址须能在百度地图成功搜索，且不可填写商业/公司地址</p>
+        </div>
+      </div>
+      
+      <div class="notice-item">
+        <div class="notice-title">4. 邮箱与浏览器建议</div>
+        <div class="notice-content">
+          <ul>
+            <li>📧 使用此前与客服沟通时提供的邮箱（QQ邮箱亦可）</li>
+            <li>🌐 如遇页面跳转问题，请尝试 <strong>Chrome / Firefox / Edge / IE</strong> 浏览器</li>
+            <li>✅ 成功提交后无需额外上传文件，耐心等待审核通知即可</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 公司详情 -->
+    <section class="card">
+      <h2>🏢 关于嘉盛集团</h2>
+      <p><strong>嘉盛</strong> 是嘉盛全球市场有限公司（GAIN Global Markets, Inc. "GGMI"）的交易品牌，在开曼群岛注册，受开曼群岛金融管理局（CIMA）监管，许可证号 <strong>25033</strong>。</p>
+      
+      <div class="tip success">
+        🌍 自成立以来，嘉盛已为来自全球 <strong>180+ 国家</strong>、超过 <strong>14 万</strong> 零售客户与机构投资者提供服务，管理资产超 <strong>14.5 亿美元</strong>（2018 Q1 数据）。
+      </div>
+      
+      <h3>✨ 为什么选择嘉盛？</h3>
+      
+      <div class="trust-card">
+        <div class="trust-icon">✓</div>
+        <div class="trust-content">
+          <h4>高质量交易执行</h4>
+          <p>不止于承诺，我们公开交易执行数据，用真实表现赢得信赖。</p>
+        </div>
+      </div>
+      
+      <div class="trust-card">
+        <div class="trust-icon">💰</div>
+        <div class="trust-content">
+          <h4>透明有竞争力的价格</h4>
+          <p>清晰定价，无隐藏条款，让您从每笔交易中充分受益。</p>
+        </div>
+      </div>
+      
+      <div class="trust-card">
+        <div class="trust-icon">🛡️</div>
+        <div class="trust-content">
+          <h4>全球多监管资质</h4>
+          <p>成员企业在全球 7 大金融管辖区持牌运营，合规为先。</p>
+        </div>
+      </div>
+      
+      <div class="trust-card">
+        <div class="trust-icon">🔒</div>
+        <div class="trust-content">
+          <h4>20 年中文服务经验</h4>
+          <p>自 2005 年起提供中文服务，是中文市场最资深交易商之一。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 资金安全专项 -->
+    <section class="security-highlight">
+      <h3>🔐 客户资金安全保障</h3>
+      <p><strong>资金隔离存放</strong>：严格遵守监管要求，所有客户资金与公司运营资本完全隔离，存放于全球顶级托管银行网络（包括美国摩根大通银行）。</p>
+      <p><strong>每日核算机制</strong>：每日正式核算隔离账户，确保资金充足覆盖客户权益；即使极端情况下公司破产，客户资产仍受优先保护。</p>
+      <p><strong>信托认证 + 风控体系</strong>：与托管银行设有信托证明，同时建立反洗钱、客户识别及高层风险委员会监控体系，全方位守护您的资产。</p>
+    </section>
+
+    <!-- 出入金服务 -->
+    <section class="card">
+      <h2>💳 安全便捷的出入金</h2>
+      <p>我们深知资金流转对您的重要性，致力于提供高效、安全的体验：</p>
+      <ul>
+        <li>✅ <strong>人民币境内取款</strong>：本金与盈利均可通过人民币直接提取</li>
+        <li>⚡ <strong>自动化流程</strong>：在线提交 + 系统处理，大幅提升出金速度与准确度</li>
+        <li>🔍 <strong>严格财务审核</strong>：每笔取款均经专业审核，确保资金安全准确退回</li>
+        <li>👥 <strong>专人跟进协助</strong>：取款专员通过邮件/电话/短信及时辅助您完成申请</li>
+      </ul>
+    </section>
+
+    <!-- 结论与行动 -->
+    <section class="card" style="background: linear-gradient(135deg, #00336608, #00a8e108); border-color: var(--accent);">
+      <h2>🎯 开始您的交易之旅</h2>
+      <p>嘉盛集团凭借 <strong>20+ 年行业经验</strong>、<strong>全球多监管资质</strong> 与 <strong>专业中文服务</strong>，致力于成为您值得信赖的交易伙伴。</p>
+      <p class="text-center">
+        <a class="cta-button" href="http://fx.fxz.es/jiasheng" target="_blank" rel="noopener">
+          🚀 立即免费开户
+        </a>
+      </p>
+      <p class="tip" style="margin-top: 0.8rem">
+        💡 开户后建议先使用模拟账户熟悉平台，再逐步投入真实资金，理性交易，控制风险。
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p><strong>FOREX 嘉盛集团</strong> · 全球多监管外汇交易服务商</p>
+    <p class="disclaimer">
+      风险提示：外汇、贵金属及差价合约（CFD）为杠杆产品，存在较高投资风险，可能导致您的本金全部损失。请确保您完全理解相关风险，并根据自身财务状况与投资经验谨慎决策。本文内容仅供参考，不构成任何投资建议。
+    </p>
+    <p style="margin-top: 0.8rem; font-size: 0.85rem">
+      © <span id="year"></span> 嘉盛集团官方信息整理 · <a href="http://fx.fxz.es/jiasheng" target="_blank" rel="noopener">访问官网</a>
+    </p>
+  </footer>
+
+  <script>
+    // 自动更新年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // 外部链接安全增强
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+    
+    // 开户注意事项折叠功能
+    document.querySelectorAll('.notice-title').forEach(title => {
+      title.addEventListener('click', () => {
+        const item = title.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+    
+    // CTA 按钮点击反馈
+    document.querySelectorAll('.cta-button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const originalText = this.innerHTML;
+        this.innerHTML = '✓ 跳转中...';
+        this.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+        setTimeout(() => {
+          this.innerHTML = originalText;
+          this.style.background = '';
+        }, 2000);
+      });
+    });
+    
+    // 页面加载时默认展开第一条注意事项（引导用户阅读）
+    window.addEventListener('load', () => {
+      const firstNotice = document.querySelector('.notice-item');
+      if (firstNotice) firstNotice.classList.add('open');
+    });
+  </script>
+
+</body>
+</html>
